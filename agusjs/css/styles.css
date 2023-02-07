@@ -1,0 +1,394 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.logo img{
+    width: 50px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 2rem;
+    background-color: aqua;
+    list-style: none;
+    text-decoration: none;
+    height: 100px;
+}
+.nav-principal ul{
+    display: flex;
+    align-items: center;
+}
+.nav-principal li{
+    margin-right: 1.5rem;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+}
+.nav-principal li a{
+    text-decoration: none;
+    color: black;
+    font-family: "Montserrat",sans-serif;
+}
+.nav-principal li a:hover{
+    color: white;
+}
+/* Empieza nosotros */
+#nosotros{
+    background: white;
+    padding: 60px 0;
+}
+#nosotros .nosotros-extra{
+    padding-top: 60px;
+}
+#nosotros .nosotros-extra h4{
+    font-weight: 400;
+    font-size: 25px;
+    color: #0a0a0a;
+    font-family: "Montserrat", sans-serif;
+}
+/* Termina nosotros */
+
+/* Empieza tienda */
+#tiendavideojuegos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 3em 3em;
+    justify-content: center;
+    align-self: center;
+    /* display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5em;
+    width: 100%;
+    justify-items: center;
+    padding-top: 4em; */
+}
+#tiendavideojuegos h2{
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 3px;
+    background-color: aqua;
+}
+#tiendavideojuegos p{
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+.producto{
+    max-width: 40%;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+/* Empieza tienda de consolas y controles */
+#tiendadecontroles{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 3em 3em;
+    justify-content: center;
+    align-self: center;
+    padding-top: 2em;
+    padding-bottom: 10em;
+}
+#tiendadecontroles h2{
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 3px;
+    background-color: aqua;
+}
+
+#tiendadecontroles p{
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+/* .contenido{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5em;
+    width: 100%;
+    justify-items: center; */
+    /* padding-bottom: 10em; */
+    /* padding-top: 4em;
+} */
+
+
+/* Termina tienda de consolas y controles */
+/* Empieza Contacto */
+#contact{
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+    padding: 60px 0;
+    overflow: hidden;
+}
+#contact .form input,
+#contact .form textarea{
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+}
+#contact h3{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    background-color: aqua;
+    height: 40px;
+}
+#contact .form input{
+    width: 100%;
+    background: none;
+    color: gray;
+    font-size: 1rem;
+    padding: 0.6em 0.3rem;
+}
+#formulario .form-group{
+    padding-bottom: 15px;
+}
+
+#aviso{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    padding-top: 20px;
+    font-size: 15px;
+    color: red;
+}
+/* Termina Contacto */
+
+/* Empieza footer */
+#footer{
+    background: aqua;
+    padding: 0 0 30px 0;
+    color: black;
+    font-size: 14px;
+}
+#footer .footer-top{
+    background: aqua;
+    padding: 60px 0 30px 0;
+}
+#footer .footer-top .footer-info{
+    margin-bottom: 30px;
+}
+#footer .footer-top .footer-info h3{
+    font-size: 14px;
+    margin: 0 0 20px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    font-weight: bold;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+#footer .footer-top .footer-info p{
+    font-size: 13px;
+    line-height: 24px;
+    margin-bottom: 0;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+}
+#footer .footer-top h4{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 10px;
+}
+#footer .footer-top .footer-contact{
+    margin-bottom: 30px;
+}
+#footer .footer-top .footer-contact p{
+    line-height: 26px;
+}
+#footer .footer-top .footer-comunidad{
+    margin-bottom: 30px;
+}
+#footer .footer-top .footer-comunidad input [type="email"]{
+    border: 0;
+    padding: 6px 8px;
+    width: 50%;
+    height: 44px;
+}
+#footer .footer-top .footer-comunidad input [type="submit"]{
+    background: aqua;
+    border: solid white 1.5px;
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    transition: 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding-left: 12px;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    height: 44px;
+}
+#footer .footer-top .footer-comunidad input [type="submit"]:hover {
+    color: black;
+    background: #fff;
+}
+#footer .copyright{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.iconos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 40px;
+    line-height: 30px;
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+.iconos i:hover{
+    transform: scale(1.2, 1.2);
+    color: white;
+}
+.iconos a{
+    color: black;
+}
+/* Termina footer */
+
+
+/* Titulos */
+.titulo1 h2{
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 3px;
+    background-color: aqua;
+}
+.titulo1 p{
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+
+
+/* Finalizar compra */
+.Finalizarcompra{
+    background-color: white;
+    padding: 2.5rem;
+    width: 100%;
+}
+.Finalizarcompra .productos_finalizarcompra{
+    margin-top: 1rem;
+}
+
+.Finalizarcompra .productos_finalizarcompra .producto_finalizarcompra p:nth-child(2) {
+    text-align: center;
+}
+
+.Finalizarcompra .productos_finalizarcompra .producto_finalizarcompra p:last-child:before {
+    content: '$';
+}
+.tarjeta_finalizarcompra {
+    padding: 22px;
+    background-color: #C4C4C4;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+.Finalizarcompra .datosPersonales_finalizarCompra .tarjeta_finalizarcompra label {
+    margin-bottom: 2px;
+}
+
+.Finalizarcompra .datosPersonales_finalizarCompra .tarjeta_finalizarcompra input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #21232a;
+    background: #C4C4C4;
+    margin-bottom: 1rem;
+}
+
+.Finalizarcompra .datosPersonales_finalizarCompra .tarjeta_finalizarCompra .izquierda_tarjeta input {
+    font-size: 22px;
+}
+
+.Finalizarcompra .datosPersonales_finalizarCompra .tarjeta_finalizarCompra .izquierda_tarjeta input:last-child {
+    width: 15%;
+}
+
+
+
+/* Notificaion*/
+.notificacion-container{
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1031;
+}
+.notificacion-container .notificacion{
+    padding: 8rem;
+    opacity: 1;
+    min-width: 20rem;
+    min-width: 22rem;
+    max-height: 122.17px;
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 1rem;
+    transition: all 1s ease-in-out
+}
+.notificacion-container .notificacion.hide{
+    opacity: 0;
+}
+.notificacion-container .notificacion.agregado{
+    background-color: greenyellow;
+}
+.notificacion-container .notificacion .notificacioninner p{
+    margin: 0;
+}
+.notificacion-container .notificacion .notificacioninner p:first-child{
+    margin-bottom: .8rem;
+    border-bottom: 1px #21232a solid;
+}
+.notificacion-container .notificacion .notificacioninner p:nth-child(2){
+    font-size: .9rem;
+}
+.notificacion-container .notificacion .notificacioninner p:last-child{
+    font-size: 8rem;
+}
+.notificacion-container .notificacion .close{
+    font-size: 1rem;
+    text-align: right;
+    cursor: pointer;
+    text-shadow: none;
+    font-weight: 500;
+}
+.notificacion-container .notificacion .close:hover{
+    color: #21232a;
+}
+.notificacion-container .notificacion .notificacioninner p:last-child::before{
+    content: '$ ';
+}
+
+
+
+/* Agregar producto al carrito */
+.modal-contenedor{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.img-carrito{
+    width: 200px;
+    padding: 20px;
+}
+
+a{
+    cursor: pointer;
+}
+.parrafo{
+    font-weight: 900;
+    font-style: italic;
+}
