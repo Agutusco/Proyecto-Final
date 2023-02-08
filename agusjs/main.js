@@ -69,21 +69,19 @@ function agregarVideojuegoAlCarrito(id) {
 
 
     const carritoTemp = [...carrito]
+    carritoTemp.forEach(el => {
+        if (el.id === id) {
+            el.cantidad++
+        }
+    })
     if (carrito.length === 0) {
         carritoTemp.push(prodCarrito)
-    }else{
-        carritoTemp.forEach(el =>{
-            // console.log(el);
-            if (el.id === id) {
-                // console.log(el.cantidad);
-                el.cantidad++
-                // console.log(el.cantidad);
-            } else {
-                carritoTemp.push(prodCarrito)
-            }
-        })
     }
-    // console.log(carritoTemp);
+    const existe = carritoTemp.find(el => el.id === id)
+    console.log(existe);
+    if (!existe) {
+        carritoTemp.push(prodCarrito)
+    }
     carrito = [...carritoTemp]
     mostrarCarrito()
 }
@@ -103,21 +101,19 @@ function agregarConsolaAlCarrito(id) {
 
 
     const carritoTemp = [...carrito]
+    carritoTemp.forEach(el => {
+        if (el.id === id) {
+            el.cantidad++
+        }
+    })
     if (carrito.length === 0) {
         carritoTemp.push(prodCarrito)
-    }else{
-        carritoTemp.forEach(el =>{
-            // console.log(el);
-            if (el.id === id) {
-                // console.log(el.cantidad);
-                el.cantidad++
-                // console.log(el.cantidad);
-            } else {
-                carritoTemp.push(prodCarrito)
-            }
-        })
     }
-    // console.log(carritoTemp);
+    const existe = carritoTemp.find(el => el.id === id)
+    console.log(existe);
+    if (!existe) {
+        carritoTemp.push(prodCarrito)
+    }
     carrito = [...carritoTemp]
     mostrarCarrito()
 }
@@ -134,7 +130,7 @@ const activarFuncion = document.querySelector("#activarFuncion")
         activarFuncion.addEventListener('click', procesarpedido)
     }
     document.addEventListener('DOMContentLoaded', () =>{
-        // carrito = JSON.parse(localStorage.getItem('carrito')) || []
+        carrito = JSON.parse(localStorage.getItem('carrito')) || []
         
         mostrarCarrito()
         mostrarCarrito2()
@@ -296,7 +292,7 @@ const mostrarCarrito = () => {
 
     preciototal.textContent = carrito.reduce((acc,prod) => acc + prod.cantidad * prod.precio, 0)
 
-    // guardarstorage()
+    guardarstorage()
 }
 
 
@@ -320,7 +316,7 @@ const mostrarCarrito2 = () => {
         </div>
         `
     })
-    // guardarstorage()
+    guardarstorage()
 }
 
 function eliminarproducto(id) {
@@ -625,4 +621,3 @@ function procesarpedido() {
 //         parrafo.innerHTML = 'Enviado'
 //     }
 // })
-
