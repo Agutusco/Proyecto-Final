@@ -53,6 +53,8 @@ let stockconsolas =[
 ]
 
 let carrito = []
+// recibirStorage()
+console.log(carrito);
 // funcion agregar al carrito
 function agregarVideojuegoAlCarrito(id) {
     // console.log(id);
@@ -78,7 +80,7 @@ function agregarVideojuegoAlCarrito(id) {
         carritoTemp.push(prodCarrito)
     }
     const existe = carritoTemp.find(el => el.id === id)
-    console.log(existe);
+    // console.log(existe);
     if (!existe) {
         carritoTemp.push(prodCarrito)
     }
@@ -117,7 +119,6 @@ function agregarConsolaAlCarrito(id) {
     carrito = [...carritoTemp]
     mostrarCarrito()
 }
-// Carrito
 
 const contenedor = document.querySelector('#tiendavideojuegos') //TODO: DUPLICADO, PROBALEMENTE LO TENEMOS QUE BORRAR
 const carritoContenedor = document.querySelector('#carritoContenedor')
@@ -126,15 +127,15 @@ const preciototal = document.querySelector('#precioTotal')
 const procesarcompra = document.querySelector('#procesarCompra')
 const activarFuncion = document.querySelector("#activarFuncion")
 
-    if (activarFuncion === true) {
-        activarFuncion.addEventListener('click', procesarpedido)
-    }
+    // if (activarFuncion === true) {
+    //     activarFuncion.addEventListener('click', procesarpedido)
+    // }
     document.addEventListener('DOMContentLoaded', () =>{
         carrito = JSON.parse(localStorage.getItem('carrito')) || []
         
-        mostrarCarrito()
-        mostrarCarrito2()
-        // document.querySelector('#activarFuncion').click(procesarpedido)
+    //     mostrarCarrito()
+    //     mostrarCarrito2()
+    //     // document.querySelector('#activarFuncion').click(procesarpedido)
     })  
 
 if (procesarcompra) {
@@ -264,6 +265,8 @@ stockconsolas.forEach((prod) => {
 
 
 const mostrarCarrito = () => {
+    console.log("cumbia");
+    console.log(carrito);
     const modalbody = document.querySelector('.modal .modal-body')
     modalbody.innerHTML = ''
     carrito.forEach((prod) => {
@@ -296,28 +299,28 @@ const mostrarCarrito = () => {
 }
 
 
-const mostrarCarrito2 = () => {
-    const modalbody = document.querySelector('.modal .modal-body')
-    modalbody.innerHTML= ''
-    carrito2.forEach((prod) => {
-        const {id, nombre, img, desc, desc2, desc3 , precio} = prod
-        modalbody.innerHTML += `
-        <div class="modal-contenedor">
-        <div>
-        <img class ="img-fluid img-carrito" src="${img}"/>
-        </div>
-        <div>
-        <p>Producto:${nombre}</p>
-        <p>Precio:${precio}</p>
-        <p>${desc2}</p>
-        <p>${desc3}</p>
-        <button onclick="eliminarproducto(${id})" class="btn btn-danger">Eliminar Producto</button>   
-        </div>
-        </div>
-        `
-    })
-    guardarstorage()
-}
+// const mostrarCarrito2 = () => {
+//     const modalbody = document.querySelector('.modal .modal-body')
+//     modalbody.innerHTML= ''
+//     carrito2.forEach((prod) => {
+//         const {id, nombre, img, desc, desc2, desc3 , precio} = prod
+//         modalbody.innerHTML += `
+//         <div class="modal-contenedor">
+//         <div>
+//         <img class ="img-fluid img-carrito" src="${img}"/>
+//         </div>
+//         <div>
+//         <p>Producto:${nombre}</p>
+//         <p>Precio:${precio}</p>
+//         <p>${desc2}</p>
+//         <p>${desc3}</p>
+//         <button onclick="eliminarproducto(${id})" class="btn btn-danger">Eliminar Producto</button>   
+//         </div>
+//         </div>
+//         `
+//     })
+//     guardarstorage()
+// }
 
 function eliminarproducto(id) {
     const juegoid = id
@@ -334,7 +337,10 @@ function eliminarproducto2(id) {
 }
 
 function guardarstorage() {
-    localStorage.setItem("carrito", JSON.stringify(carrito, carrito2))
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+}
+function recibirStorage() {
+    carrito = JSON.parse(localStorage.getItem("carrito"))
 }
 
 function procesarpedido() {
