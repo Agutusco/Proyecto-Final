@@ -54,9 +54,44 @@ let stockconsolas =[
 
 let carrito = []
 // funcion agregar al carrito
-function agregarAlCarrito(id) {
+function agregarVideojuegoAlCarrito(id) {
     // console.log(id);
+    console.log("Agregue un videojuego");
     const prod = stockproductos.find(el => el.id === id)
+    // console.log(prod);
+    const prodCarrito = {
+        id: prod.id,
+        nombre: prod.nombre,
+        precio: prod.precio,
+        img: prod.img,
+        cantidad: 1
+    }
+
+
+    const carritoTemp = [...carrito]
+    if (carrito.length === 0) {
+        carritoTemp.push(prodCarrito)
+    }else{
+        carritoTemp.forEach(el =>{
+            // console.log(el);
+            if (el.id === id) {
+                // console.log(el.cantidad);
+                el.cantidad++
+                // console.log(el.cantidad);
+            } else {
+                carritoTemp.push(prodCarrito)
+            }
+        })
+    }
+    // console.log(carritoTemp);
+    carrito = [...carritoTemp]
+    mostrarCarrito()
+}
+
+function agregarConsolaAlCarrito(id) {
+    // console.log(id);
+    console.log("Agregue una consola");
+    const prod = stockconsolas.find(el => el.id === id)
     // console.log(prod);
     const prodCarrito = {
         id: prod.id,
@@ -140,7 +175,7 @@ stockproductos.forEach((prod) => {
         <h5 class="card-title">${nombre}</h5>
         <p class="card-text">${desc}<br> <strong>$${precio}</strong></p>
         <p> Cantidad: ${cantidad} </p>
-        <button onclick="agregarAlCarrito(${id})" class="btn btn-primary">Agregar al carrito</button>
+        <button onclick="agregarVideojuegoAlCarrito(${id})" class="btn btn-primary">Agregar al carrito</button>
         </div>
         </div>
         `
@@ -149,13 +184,13 @@ stockproductos.forEach((prod) => {
         // <button id="agregar${id}" class="btn btn-primary">Agregar al carrito</button>
         // const boton = document.getElementById(`agregar${id}`)   
         // boton.addEventListener("click", () => {
-        //     agregaralcarrito(id)
+        //     agregarVideojuegoAlCarrito(id)
         //     console.log(id);
         // })
     // }
 
 })
-// const agregaralcarrito = (id) =>{
+// const agregarVideojuegoAlCarrito = (id) =>{
 //     const existe = carrito.some(prod => prod.id === id)
 // if (existe) {
 //     const prod = carrito.map(prod =>{
@@ -191,27 +226,28 @@ stockconsolas.forEach((prod) => {
     <li class="list-group-item"><strong>$${precio}</strong></li>
     </ul>
     <div class="card-body">
-    <button class="btn btn-secondary" id="agregar${id}">Agregar al carrito</button>
+    <button onclick="agregarConsolaAlCarrito(${id})" class="btn btn-primary">Agregar al carrito</button>
     </div>
-</div>
+    </div>
     `
+    // <button class="btn btn-secondary" id="agregar${id}">Agregar al carrito</button>
     tiendadeconsolas.appendChild(div)
 
-    const boton1 = document.getElementById(`agregar${id}`)
+    // const boton1 = document.getElementById(`agregar${id}`)
 
-    boton1.addEventListener("click", () => {
-        agregaralcarrito(id)
-        console.log(id);
-    })
+    // boton1.addEventListener("click", () => {
+    //     agregarVideojuegoAlCarrito(id)
+    //     console.log(id);
+    // })
 })
 
 
-const agregaralcarrito = (id) =>{
-    const item2 = stockconsolas.find((prod) => prod.id === id)
-    carrito2.push(item2)
-    console.log(item2)
-    mostrarCarrito2()
-}
+// const agregarVideojuegoAlCarrito = (id) =>{
+//     const item2 = stockconsolas.find((prod) => prod.id === id)
+//     carrito2.push(item2)
+//     console.log(item2)
+//     mostrarCarrito2()
+// }
 
 
 
@@ -260,7 +296,7 @@ const mostrarCarrito = () => {
 
     preciototal.textContent = carrito.reduce((acc,prod) => acc + prod.cantidad * prod.precio, 0)
 
-    guardarstorage()
+    // guardarstorage()
 }
 
 
@@ -284,7 +320,7 @@ const mostrarCarrito2 = () => {
         </div>
         `
     })
-    guardarstorage()
+    // guardarstorage()
 }
 
 function eliminarproducto(id) {
