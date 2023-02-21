@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css  ">
     <!-- Icons BS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- toastify notificaciones-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body>
     <!-- Empieza header -->
@@ -35,6 +37,29 @@
         </nav>
     </header>
     <!-- Termina Header -->
+    <!-- Empieza carousel -->
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="./assets/enrique-vidal-flores-zsXvRKtsf6Q-unsplash.jpg" class="d-block w-100 img-fluid" alt="..." id="prueba">
+        </div>
+        <div class="carousel-item">
+            <img src="./assets/nik-lUbIun4IL38-unsplash.jpg" class="d-block w-100 img-fluid" alt="..." id="prueba">
+        </div>
+        <div class="carousel-item">
+            <img src="./assets/ryan-quintal-t8_tn3tqmoI-unsplash.jpg" class="d-block w-100 img-fluid" alt="..." id="prueba">
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- Termina carousel -->
     <!-- Empieza nosotros -->
     <section id="nosotros">
         <div class="container">
@@ -45,7 +70,7 @@
                 <div class="col-lg-6">
                     <h4>Bienvenido a GamePad</h4>
                     <p>Somos una tienda de videojuegos y controles de buena calidad. Tenemos todo tipo de juegos y para todas las consolas desde Playstation4 hasta nintendo. Amamos este mundo gamer, puedes ver nuestros directos por Twitch. <a href="https://www.twitch.tv/">¡Haz click aqui!</a></p>
-                    <p>Ahora, puedes crear a tus propios personajes. Puedes ponerle los colores, brazos, caras, piernas, pelo, lo que VOS quieras y de manera rapida, sencilla y gratuita. Solamente debes venir a retirar tu personaje a nuestra tienda y te lo daremos gracias a los diseños 3D.</p>
+                    <p>Para poder enviar los productos a tu casa, debes ponernos tu dirección en el gmail para confirmar la compra. Tanto las consolas retro como las modernas tienen <strong>1 año</strong> de garantía, cualquier problema lo arreglamos en el momento.</p>
                 </div>
             </div>
         </div>
@@ -71,6 +96,13 @@
     </section>
     <!-- Termina tienda de controles -->
     <!-- Empieza tienda retro -->
+    <div class="titulo1">
+        <h2>Consolas Retro</h2>
+        <p>Esta es nuestra sección para consolas retro</p>
+        <p>Los precios finales ya vienen con el 21% de IVA</p>
+        <P>Son productos nuevos y tienen <strong>1 año</strong> de garantía</P>
+    </div>
+    <section id="tiendaretro"></section>
     <!-- Termina tienda retro -->
     <!-- Empieza contacto -->
     <section id="contact">
@@ -103,6 +135,7 @@
                             </div>
                             <div class="text-center"><button type="submit" title="send message">Enviar</button></div>
                             <p id="aviso"></p>
+                            <p id="perfecto"></p>
                         </form>
                     </div>
                 </div>
@@ -155,7 +188,7 @@
             <div class="row">
             <div class="col-lg-4 col-md-6 footer-info">
                 <h3>Tienda de Videojuegos</h3>
-                <p>Te acompañamos en la creación de un personaje con las características que usted quiera. Todo esto vendra PROXIMAMENTE.</p>
+                <p>GamePad fue fundada en el 2015 con la idea de vender articulos de buena calidad y a un buen precio. Actualmente contamos con sucursales en España, Brasil, Uruguay y Chile.</p>
             </div>
             <div class="col-lg-2 col-md-6 footer-links">
             </div>
@@ -186,11 +219,15 @@
         </div>
     </footer>
     <!-- Termina footer -->
-    <!-- Archivo JS BOOTSTRAP -->
-    <!-- Mi archivo JS -->
+    <!-- Sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="./main.js"></script>
+    <!-- toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- bundle JS -->
     <script src="bootstrap.bundle.min.js"></script>
+    <!-- Archivo JS BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>    <!-- Archivo productos JS -->
+    <!-- Mi archivo JS -->
+    <script src="./main.js"></script>
 </body>
 </html>
